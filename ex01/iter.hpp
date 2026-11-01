@@ -3,10 +3,20 @@
 
 #include <cstddef>
 
-template <typename T, typename F>
-void iter(T *array, const size_t length, F function)
+
+template <typename T>
+void iter(T *array, const size_t length, void (*function)(T &))
 {
-    for (size_t i = 0; i < length; ++i)
+    for (size_t i = 0; i < length; i++)
+    {
+        function(array[i]);
+    }
+}
+
+template <typename T>
+void iter(const T *array, const size_t length, void (*function)(const T &))
+{
+    for (size_t i = 0; i < length; i++)
     {
         function(array[i]);
     }

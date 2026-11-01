@@ -6,56 +6,56 @@
 
 int main()
 {
-    // Test 1: Empty array
+    // test empty array
     Array<int> empty;
 
     std::cout << "Empty array size: "
               << empty.size() << std::endl;
 
-    // Test 2: Array of integers
+    // test Array of integers
     Array<int> numbers(5);
 
     for (unsigned int i = 0; i < numbers.size(); i++)
         numbers[i] = i + 1;
 
-    std::cout << "\nOriginal array:" << std::endl;
+    std::cout << "Original array:" << std::endl;
 
     for (unsigned int i = 0; i < numbers.size(); i++)
         std::cout << numbers[i] << std::endl;
 
-    // Test 3: Copy constructor
+    // test copy constructor
     Array<int> copy(numbers);
 
     copy[0] = 100;
 
-    std::cout << "\nOriginal first element: "
+    std::cout << "Original first element: "
               << numbers[0] << std::endl;
 
     std::cout << "Copied first element: "
               << copy[0] << std::endl;
 
-    // Test 4: Assignment operator
+    // test assignment operator
     Array<int> assigned;
 
     assigned = numbers;
     assigned[1] = 200;
 
-    std::cout << "\nOriginal second element: "
+    std::cout << "Original second element: "
               << numbers[1] << std::endl;
 
     std::cout << "Assigned second element: "
               << assigned[1] << std::endl;
 
-    // Test 5: Different type
+    // test different type
     Array<std::string> words(2);
 
     words[0] = "Hello";
     words[1] = "World";
 
-    std::cout << "\nString array:" << std::endl;
-    std::cout << words[0] << " " << words[1] << std::endl;
+    std::cout << "String array:" << std::endl;
+    std::cout << ">> " << words[0] << " " << words[1] << std::endl;
 
-    // Test 6: Out-of-bounds exception
+    // test out-of-bounds exception
     try
     {
         std::cout << numbers[10] << std::endl;
